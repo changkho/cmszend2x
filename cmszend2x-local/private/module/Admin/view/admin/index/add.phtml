@@ -1,0 +1,564 @@
+<?php 
+foreach ($this->articles as $val)
+{
+	echo "<pre>";
+print_r($val);
+echo "</pre>";
+}
+
+
+echo ( count($this->articles) > 0 ) ? $this->paginationControl($this->articles, 'Sliding', 'paginator.phtml',array('route' => 'admin','controller' => 'index','action' => 'add')) : "";
+
+ //die();?>
+<div class="m">
+		<div class="mt clearfix">
+    	    	<p class="search">
+        	<label>Search</label>
+        	<select class="select1" id="listField"><option value="a.id">ID</option>	<option value="a.name">Article Name</option>	</select>            <input type="text" class="txt" id="txtKeyword">
+            <input type="button" value="Search" class="button" id="btnSearch">
+        </p>
+       
+    </div>
+    <table class="tbl noBorderBottom">
+            <tbody><tr>
+                <td>
+					<div class="l">	Show <select class="select1" id="cboLimit"><option>5</option>	<option>10</option>	<option>15</option>	<option>20</option>	<option>25</option>	<option>30</option>	</select> items </div>
+										
+					<span id="spnPaging">		<span style="float: left;padding: 5px;">in page:</span>
+         <ul class="ulP">
+        
+	    			<li><a>First</a></li>
+				
+        <!-- Begin previous page link -->
+                    <li class="paging_previous"><a>Pre</a></li>
+            
+	    <!-- End previous page link -->
+
+       <!-- Begin numbered page links -->
+                                	<li class="activeP"><a>1</a></li>
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','2')" href="javascript:void(0)">
+						2                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','3')" href="javascript:void(0)">
+						3                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','4')" href="javascript:void(0)">
+						4                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','5')" href="javascript:void(0)">
+						5                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','6')" href="javascript:void(0)">
+						6                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','7')" href="javascript:void(0)">
+						7                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','8')" href="javascript:void(0)">
+						8                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','9')" href="javascript:void(0)">
+						9                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','10')" href="javascript:void(0)">
+						10                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','11')" href="javascript:void(0)">
+						11                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','12')" href="javascript:void(0)">
+						12                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','13')" href="javascript:void(0)">
+						13                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','14')" href="javascript:void(0)">
+						14                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','15')" href="javascript:void(0)">
+						15                    </a>
+                </li>    
+                           <!-- End numbered page links -->
+        
+
+	    <!-- Begin next page link -->
+      				<li class="paging_next">
+            	<a title="Next" onclick="requestPage('/admin ','2')" href="javascript:void(0)">
+                	Next
+                </a>
+            </li>
+            
+	    <!-- End next page link -->
+				  <li><a onclick="requestPage('/admin ','58')" href="javascript:void(0)">Last</a></li>
+				
+		
+            
+        </ul>
+   
+
+
+</span>
+					<div class="r rightzone">
+						<strong>Total: <span id="spnTotalRows">290</span> items</strong><br>		
+						<p class="add">
+													<a href="/admin/index/insert">Add new</a>
+											</p>					
+					</div>
+                </td>
+
+            </tr>
+    </tbody></table>
+    
+	<table class="tbl">
+        <thead>
+            <tr>
+            		</tr><tr>
+		<th style="text-align:center; width:65px">
+	    	<p class="ma2">
+	        	<a href="javascript:void(0)" onclick="list.deleteMultiRow()"><img src="/static_admin/images/recycle_bin.png" alt="" title=""></a>
+	        	<a href="javascript:void(0)" onclick="list.toggleMultiVal(0)"><img src="/static_admin/images/delS.png" alt="" title=""></a>
+	        	<a href="javascript:void(0)" onclick="list.toggleMultiVal(1)"><img src="/static_admin/images/okS.png" alt="" title=""></a>
+	        </p>
+	    	<p><input type="checkbox" class="chkCheckall"></p>
+	    </th>
+	
+		<th nowrap="" style="text-align:center;">
+	
+	Id	
+			
+		<a href="javascript:void(0)" onclick="list.sort('a.id', 'desc')"><img src="/static_admin/images/arrow_bottom.png"></a>
+	    <a href="javascript:void(0)" onclick="list.sort('a.id', 'asc')"><img src="/static_admin/images/arrow_top.png"></a>
+	   
+
+	<br>
+	
+        
+</th><th nowrap="" style="text-align:center;">
+	
+	Name	
+			
+		<a href="javascript:void(0)" onclick="list.sort('a.name', 'desc')"><img src="/static_admin/images/arrow_bottom.png"></a>
+	    <a href="javascript:void(0)" onclick="list.sort('a.name', 'asc')"><img src="/static_admin/images/arrow_top.png"></a>
+	   
+
+	<br>
+	
+        
+</th><th nowrap="" style="text-align:center;">
+	
+	Alias	
+	   
+
+	<br>
+	
+        
+</th><th nowrap="" style="text-align:center;">
+	
+	Category	
+			
+		<a href="javascript:void(0)" onclick="list.sort('category', 'desc')"><img src="/static_admin/images/arrow_bottom.png"></a>
+	    <a href="javascript:void(0)" onclick="list.sort('category', 'asc')"><img src="/static_admin/images/arrow_top.png"></a>
+	   
+
+	<br>
+	
+    <select id="b.id" rel="listFilter" class="select1 insidetd"><option value="all">All</option>	<option value="1">Đời sống sinh viên</option>	<option value="2">Thực tập - Việc làm</option>	<option value="3">Đào tạo kỹ năng</option>	<option value="4">Phòng trọ</option>	<option value="5">Hồ sơ ứng tuyển</option>	<option value="7">Kỹ năng mềm là gì?</option>	<option value="8">Giải trí tuổi trẻ</option>	<option value="9">Hội sinh viên</option>	<option value="11">Các khóa học kỹ năng mềm</option>	<option value="12">Du học - Ngoại ngữ</option>	<option value="13">Học ngoại ngữ</option>	<option value="30">Diễn đàn - Thảo luận</option>	<option value="33">Chuyên ngành</option>	<option value="34">Hệ thống giáo dục</option>	<option value="35">Văn bằng – Chứng chỉ</option>	<option value="36">Giáo dục đại học</option>	<option value="37">Giáo dục sau đại học</option>	<option value="39">Tư vấn du học</option>	<option value="40">Kỹ năng tìm việc &amp; thực tập</option>	<option value="41">Phỏng vấn xin việc</option>	<option value="45">Việc làm thêm</option>	<option value="46">Website tuyển dụng 'First-Viec-Lam'</option>	<option value="47">Thông tin việc làm 'Blog First-Viec-Lam'</option>	<option value="48">Các nhóm kỹ năng</option>	<option value="56">Kỹ năng giao tiếp</option>	<option value="57">Kỹ năng học tập</option>	<option value="58">Kỹ năng xin việc</option>	<option value="59">Kỹ năng giải toả Stress</option>	<option value="60">Kỹ năng sống</option>	<option value="61">Kỹ năng thuyết trình</option>	<option value="62">Thư viện sách hay</option>	<option value="63">Tài liệu tham khảo</option>	<option value="64">Sinh viên rao vặt </option>	</select>    
+</th><th nowrap="" style="text-align:center;">
+	
+	Image	
+	   
+
+	<br>
+	
+        
+</th><th nowrap="" style="text-align:center;">
+	
+	Description	
+	   
+
+	<br>
+	
+        
+</th><th nowrap="" style="text-align:center;">
+	
+	Post date	
+			
+		<a href="javascript:void(0)" onclick="list.sort('a.created_time', 'desc')"><img src="/static_admin/images/arrow_bottom.png"></a>
+	    <a href="javascript:void(0)" onclick="list.sort('a.created_time', 'asc')"><img src="/static_admin/images/arrow_top.png"></a>
+	   
+
+	<br>
+	
+    <input disabled="true" class="textbox_calendar hasDatepicker" type="text" id="a.created_time"><img class="ui-datepicker-trigger" src="/static_admin/images/edit.png" alt="..." title="...">    
+</th><th nowrap="" style="text-align:center;">
+	
+	Active	
+	   
+
+	<br>
+	
+    <select rel="listFilter" class="select1 insidetd" id="a.active"><option value="all">All</option>	<option value="0">Deactive</option>	<option value="1">Active</option>	</select>    
+</th><th nowrap="" style="text-align:center;">
+	
+	Sort<br><input type="button" value="Update sort" id="bUpdateSort">	
+	   
+
+	<br>
+	
+        
+</th>		
+		
+       	
+	</tr>            
+        </thead>
+        
+        <tbody id="container">
+		   
+			<tr id="822">
+
+	<td style="text-align:center;">
+    	<a onclick="list.edit('822')" href="/admin/index/update/id/822"><img src="/static_admin/images/edit.png" alt="" title=""></a>
+    	<a onclick="list.deleteSingleRow('822')" href="javascript:void(0)"><img src="/static_admin/images/recycle_bin.png" alt="" title=""></a>
+        <input type="checkbox" class="chkRow" value="822">
+    </td>
+    
+		
+	<td align="center">
+		822	</td>
+
+	
+	<td align="center">
+		<a href="/admin/index/update/id/822">dfdsdsaf dfgfdsg chung thanh</a>	</td>
+
+	
+	<td align="center">
+		<a href="/articles/detail/dfdsdsaf-dfgfdsg-chung-thanh.html">dfdsdsaf-dfgfdsg-chung-thanh</a>	</td>
+
+	
+	<td align="center">
+		Giáo dục sau đại học	</td>
+
+	
+	<td align="center">
+		<a href="/admin/detail/822.html"><img src="/static/upload/articles//sdf" style="" width="100"></a><br>	</td>
+
+	
+	<td align="center">
+		sdaf 	</td>
+
+	
+	<td align="center">
+		13/08/2013 03:00	</td>
+
+	
+	<td align="center">
+		<a onclick="list.toggleVal(822,event)" href="javascript:void(0)"><img class="status" src="/static_admin/images/ok.png" border="0"></a>	</td>
+
+	
+	<td align="center">
+		<input value="100" type="text" name="a.sort" id="txtPosition" class="txt" style="width:50px; text-align:center;">	</td>
+
+
+</tr><tr id="821">
+
+	<td style="text-align:center;">
+    	<a onclick="list.edit('821')" href="/admin/index/update/id/821"><img src="/static_admin/images/edit.png" alt="" title=""></a>
+    	<a onclick="list.deleteSingleRow('821')" href="javascript:void(0)"><img src="/static_admin/images/recycle_bin.png" alt="" title=""></a>
+        <input type="checkbox" class="chkRow" value="821">
+    </td>
+    
+		
+	<td align="center">
+		821	</td>
+
+	
+	<td align="center">
+		<a href="/admin/index/update/id/821">Thêm thử cái nữa xem sao</a>	</td>
+
+	
+	<td align="center">
+		<a href="/articles/detail/them-thu-cai-nua-xem-sao.html">them-thu-cai-nua-xem-sao</a>	</td>
+
+	
+	<td align="center">
+		Hệ thống giáo dục	</td>
+
+	
+	<td align="center">
+		<a href="/admin/detail/821.html"><img src="/static/upload/articles//Thêm thử cái nữa xem sao" style="" width="100"></a><br>	</td>
+
+	
+	<td align="center">
+		Thêm thử cái nữa xem sao	</td>
+
+	
+	<td align="center">
+		12/08/2013 08:00	</td>
+
+	
+	<td align="center">
+		<a onclick="list.toggleVal(821,event)" href="javascript:void(0)"><img class="status" src="/static_admin/images/ok.png" border="0"></a>	</td>
+
+	
+	<td align="center">
+		<input value="4" type="text" name="a.sort" id="txtPosition" class="txt" style="width:50px; text-align:center;">	</td>
+
+
+</tr><tr id="820">
+
+	<td style="text-align:center;">
+    	<a onclick="list.edit('820')" href="/admin/index/update/id/820"><img src="/static_admin/images/edit.png" alt="" title=""></a>
+    	<a onclick="list.deleteSingleRow('820')" href="javascript:void(0)"><img src="/static_admin/images/recycle_bin.png" alt="" title=""></a>
+        <input type="checkbox" class="chkRow" value="820">
+    </td>
+    
+		
+	<td align="center">
+		820	</td>
+
+	
+	<td align="center">
+		<a href="/admin/index/update/id/820">hom nay la thu hai dau tuan dfgdfsg</a>	</td>
+
+	
+	<td align="center">
+		<a href="/articles/detail/hom-nay-la-thu-hai-dau-tuan-dfgdfsgallow.html">hom-nay-la-thu-hai-dau-tuan-dfgdfsgallow</a>	</td>
+
+	
+	<td align="center">
+		Các nhóm kỹ năng	</td>
+
+	
+	<td align="center">
+		<a href="/admin/detail/820.html"><img src="/static/upload/articles//thisinhdanang_1334808831.jpg" style="" width="100"></a><br>	</td>
+
+	
+	<td align="center">
+		hom nay la thu hai dau tuan	</td>
+
+	
+	<td align="center">
+		12/08/2013 05:00	</td>
+
+	
+	<td align="center">
+		<a onclick="list.toggleVal(820,event)" href="javascript:void(0)"><img class="status" src="/static_admin/images/delete.png" border="0"></a>	</td>
+
+	
+	<td align="center">
+		<input value="100" type="text" name="a.sort" id="txtPosition" class="txt" style="width:50px; text-align:center;">	</td>
+
+
+</tr><tr id="819">
+
+	<td style="text-align:center;">
+    	<a onclick="list.edit('819')" href="/admin/index/update/id/819"><img src="/static_admin/images/edit.png" alt="" title=""></a>
+    	<a onclick="list.deleteSingleRow('819')" href="javascript:void(0)"><img src="/static_admin/images/recycle_bin.png" alt="" title=""></a>
+        <input type="checkbox" class="chkRow" value="819">
+    </td>
+    
+		
+	<td align="center">
+		819	</td>
+
+	
+	<td align="center">
+		<a href="/admin/index/update/id/819">thu nghiem ajax poup</a>	</td>
+
+	
+	<td align="center">
+		<a href="/articles/detail/thu-nghiem-ajax-poup.html">thu-nghiem-ajax-poup</a>	</td>
+
+	
+	<td align="center">
+		Giáo dục sau đại học	</td>
+
+	
+	<td align="center">
+		<a href="/admin/detail/819.html"><img src="/static/upload/articles//sadfaf" style="" width="100"></a><br>	</td>
+
+	
+	<td align="center">
+		sdafdsa	</td>
+
+	
+	<td align="center">
+		12/08/2013 05:00	</td>
+
+	
+	<td align="center">
+		<a onclick="list.toggleVal(819,event)" href="javascript:void(0)"><img class="status" src="/static_admin/images/ok.png" border="0"></a>	</td>
+
+	
+	<td align="center">
+		<input value="100" type="text" name="a.sort" id="txtPosition" class="txt" style="width:50px; text-align:center;">	</td>
+
+
+</tr><tr id="814">
+
+	<td style="text-align:center;">
+    	<a onclick="list.edit('814')" href="/admin/index/update/id/814"><img src="/static_admin/images/edit.png" alt="" title=""></a>
+    	<a onclick="list.deleteSingleRow('814')" href="javascript:void(0)"><img src="/static_admin/images/recycle_bin.png" alt="" title=""></a>
+        <input type="checkbox" class="chkRow" value="814">
+    </td>
+    
+		
+	<td align="center">
+		814	</td>
+
+	
+	<td align="center">
+		<a href="/admin/index/update/id/814">Tiêu đề vũ viết hùng khong the</a>	</td>
+
+	
+	<td align="center">
+		<a href="/articles/detail/tieu-de-vu-viet-hung-khong-the.html">tieu-de-vu-viet-hung-khong-the</a>	</td>
+
+	
+	<td align="center">
+		Hội sinh viên	</td>
+
+	
+	<td align="center">
+		<a href="/admin/detail/814.html"><img src="/static/upload/articles///static/upload/images/articles/My%20Picture%20%20Kevin%20Garrido.jpg" style="" width="100"></a><br>	</td>
+
+	
+	<td align="center">
+		Tiêu đề vũ viết hùng	</td>
+
+	
+	<td align="center">
+		08/08/2013 03:00	</td>
+
+	
+	<td align="center">
+		<a onclick="list.toggleVal(814,event)" href="javascript:void(0)"><img class="status" src="/static_admin/images/ok.png" border="0"></a>	</td>
+
+	
+	<td align="center">
+		<input value="100" type="text" name="a.sort" id="txtPosition" class="txt" style="width:50px; text-align:center;">	</td>
+
+
+</tr>			
+		</tbody>
+		
+	    
+	</table>  
+	
+    <table class="tbl" style="border-top:none; border-botom:1px solid #BBBBBB">
+            <tbody><tr>
+                <td>
+					<div class="l">	Show <select class="select1" id="cboLimit"><option>5</option>	<option>10</option>	<option>15</option>	<option>20</option>	<option>25</option>	<option>30</option>	</select> items </div>
+										
+					<span id="spnPaging">		<span style="float: left;padding: 5px;">in page:</span>
+         <ul class="ulP">
+        
+	    			<li><a>First</a></li>
+				
+        <!-- Begin previous page link -->
+                    <li class="paging_previous"><a>Pre</a></li>
+            
+	    <!-- End previous page link -->
+
+       <!-- Begin numbered page links -->
+                                	<li class="activeP"><a>1</a></li>
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','2')" href="javascript:void(0)">
+						2                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','3')" href="javascript:void(0)">
+						3                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','4')" href="javascript:void(0)">
+						4                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','5')" href="javascript:void(0)">
+						5                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','6')" href="javascript:void(0)">
+						6                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','7')" href="javascript:void(0)">
+						7                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','8')" href="javascript:void(0)">
+						8                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','9')" href="javascript:void(0)">
+						9                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','10')" href="javascript:void(0)">
+						10                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','11')" href="javascript:void(0)">
+						11                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','12')" href="javascript:void(0)">
+						12                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','13')" href="javascript:void(0)">
+						13                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','14')" href="javascript:void(0)">
+						14                    </a>
+                </li>    
+                                            	<li class="paging_link">
+	                <a onclick="requestPage('/admin ','15')" href="javascript:void(0)">
+						15                    </a>
+                </li>    
+                           <!-- End numbered page links -->
+        
+
+	    <!-- Begin next page link -->
+      				<li class="paging_next">
+            	<a title="Next" onclick="requestPage('/admin ','2')" href="javascript:void(0)">
+                	Next
+                </a>
+            </li>
+            
+	    <!-- End next page link -->
+				  <li><a onclick="requestPage('/admin ','58')" href="javascript:void(0)">Last</a></li>
+				
+		
+            
+        </ul>
+   
+
+
+</span>
+                </td>
+
+            </tr>
+    </tbody></table>
+    
+<div id="popup-dialog" style="display: none;"></div>
+<script type="text/javascript">
+	list.bindEvent();
+	list.url ="/admin/index";
+</script> 	</div>

@@ -1,0 +1,22 @@
+<?php
+//var_dump($this->form); 
+$form = $this->form;
+//$form->setAttribute('action', $this->url());
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formRow($form->get('name'));
+//echo $this->formElementErrors($form->get('name'));
+echo $this->formRow($form->get('alias'));
+echo $this->formRow($form->get('cat_id'));
+//echo $this->formElementErrors($form->get('cat_id'));
+echo $this->formRow($form->get('is_home_page'));
+echo $this->formRow($form->get('islink'));
+echo $this->formRow($form->get('active'));
+echo $this->formRow($form->get('link'));
+echo $this->formRow($form->get('intro_text'));
+echo $this->formRow($form->get('image'));
+echo $this->formRow($form->get('content'));
+echo $this->formRow($form->get('submit'));
+echo $this->form()->closeTag($form);
+?>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?php echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+<?php /* echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge') */
+ ?>
+<!-- Styles -->
+<?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath() . '/static/admin/css/style.css')
+?>
+<!-- Scripts -->
+<?php echo $this->headScript()
+			->appendFile($this->basePath() . '/static/admin/js/jquery-1.9.1.min.js')
+            ->appendFile($this->basePath() . '/static/admin/js/config.js')
+            ->appendFile($this->basePath() . '/static/admin/js/common.js')
+            ->appendFile($this->basePath() . '/static/admin/js/ckfinder/ckfinder.js')
+            ->appendFile($this->basePath() . '/static/admin/js/ckfinder/browse_server.js')
+            ->appendFile($this->basePath() . '/static/admin/js/admin.js')
+            ->appendFile($this->basePath() . '/static/admin/js/jquery.validate.min.js')
+            ->appendFile($this->basePath() . '/static/admin/js/ckeditor/ckeditor.js')
+            
+        ; ?>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#input_form').validate();
+});  
+</script>
+</head>
+<body>   
+	<div id="loading"><strong>Loading...</strong></div>
+	<div id="dialog-confirm" title="Please confirm!">
+		<p>
+			<span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+			<span id="dialogMessage"></span>
+		</p>
+	</div>
+	<div class="t">
+		<span style="margin-right: 20px; font-weight: bold; "><a href="/admin/user/">Manage Admin Accounts</a></span>
+			Welcome back, <a href="#">admin</a>&nbsp;|&nbsp; <a href="/admin/logout">Log out</a> or <a href="#">Go to web</a>
+	</div>
+	<div class="th clearfix">
+		<div class="logo clearfix">
+	    	<a href="/admin">SW CMS</a>
+	        <h3></h3>
+	    </div>
+	
+	            <ul class="menu clearfix">
+	            <li class="lim act"><a href="#">Du học</a></li>
+	            <li class="lim">
+	                <a href="#">Quản lý nội dung</a>
+	                <ul>
+	                    <li><a href="#">City Manage</a></li>
+	                    <li><a href="#">Giới thiệu chung</a></li>
+	                    <li><a href="#">Quản lý user test HN</a></li>
+	                    <li><a href="#">Newsletter</a></li>
+	                    <li class="li1"><a href="#"> Links</a></li>
+	                </ul>
+	            </li>
+	            <li class="lim"><a href="#">Tin tức bài viết</a>
+	            	<ul>
+	                    <li><a href="/admin/category">Quản lý category</a></li>
+	                    <li><a href="/admin">Bài viết category</a></li>
+	                </ul>
+	            </li>
+	            <li class="lim"><a href="#">Cơ sở &amp; Trung tâm đào tạo</a></li>
+	            <li class="lim"><a href="#">Đời sống sinh viên</a></li>
+	            <li class="lim"><a href="#">Việc làm thêm</a></li>
+	            <li class="lim"><a href="#">Kỹ năng tìm việc</a></li>
+	            <li class="lim"><a href="#">Thư viện sách hay</a></li>
+	            <li class="lim"><a href="#">Tài liệu tham khảo</a></li>
+	            <li class="lim"><a href="#">STATISTICS</a></li>
+	        </ul>
+	</div>
+	<?php //echo $this->placeholder('header'); 
+	//echo $this->mainMenu();
+	?> 
+	<div class="m">
+		<?php echo $this->layout()->content; ?>
+	</div>
+     <footer style="clear: both;">
+             <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
+     </footer>  
+	 <div style="float:left; width:100%; color:#999">
+		 <?php if($this->queryString!=''){ ?>
+		  <br /> <br /> <br />
+		  <?php echo $this->queryString ?> <br />
+		  <br /> <br />
+		  <?php } ?>
+	 </div> 
+	 <?php echo $this->inlineScript() ?>
+    </body>
+</html>

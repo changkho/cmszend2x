@@ -1,0 +1,212 @@
+<div class="m">
+	<div class="mt clearfix">
+		<p class="search">
+			<label>Search</label> <select class="select1" id="listField"><option
+					value="a.id">ID</option>
+				<option value="a.name">Article Name</option>
+			</select> <input type="text" class="txt" id="txtKeyword"> <input
+				type="button" value="Search" class="button" id="btnSearch">
+		</p>
+
+	</div>
+	<table class="tbl noBorderBottom">
+		<tbody>
+			<tr>
+				<td>
+					<div class="l">
+						Show <select class="select1" id="cboLimit"><option>5</option>
+							<option>10</option>
+							<option>15</option>
+							<option>20</option>
+							<option>25</option>
+							<option>30</option>
+						</select> items
+					</div>
+										
+				<?php echo ( count($this->articles) > 0 ) ? $this->paginationControl($this->articles, 'Sliding', 'paginator.phtml',array('route' => 'admin','controller' => 'index','action' => 'index')) : "";?>
+					<div class="r rightzone">
+						<strong>Total: <span id="spnTotalRows">290</span> items
+						</strong><br>
+						<p class="add">
+							<a href="/admin/index/insert">Add new</a>
+						</p>
+					</div>
+				</td>
+
+			</tr>
+		</tbody>
+	</table>
+
+	<table class="tbl">
+		<thead>
+			<tr>
+			</tr>
+			<tr>
+				<th style="text-align: center; width: 65px">
+					<p class="ma2">
+						<a href="javascript:void(0)" onclick="list.deleteMultiRow()"><img
+							src="/static/admin/images/recycle_bin.png" alt="" title=""></a> <a
+							href="javascript:void(0)" onclick="list.toggleMultiVal(0)"><img
+							src="/static/admin/images/delS.png" alt="" title=""></a> <a
+							href="javascript:void(0)" onclick="list.toggleMultiVal(1)"><img
+							src="/static/admin/images/okS.png" alt="" title=""></a>
+					</p>
+					<p>
+						<input type="checkbox" class="chkCheckall">
+					</p>
+				</th>
+
+				<th nowrap="" style="text-align: center;">Id <a
+					href="javascript:void(0)" onclick="list.sort('a.id', 'desc')"><img
+						src="/static/admin/images/arrow_bottom.png"></a> <a
+					href="javascript:void(0)" onclick="list.sort('a.id', 'asc')"><img
+						src="/static/admin/images/arrow_top.png"></a> <br>
+
+
+				</th>
+				<th nowrap="" style="text-align: center;">Name <a
+					href="javascript:void(0)" onclick="list.sort('a.name', 'desc')"><img
+						src="/static/admin/images/arrow_bottom.png"></a> <a
+					href="javascript:void(0)" onclick="list.sort('a.name', 'asc')"><img
+						src="/static/admin/images/arrow_top.png"></a> <br>
+
+
+				</th>
+				<th nowrap="" style="text-align: center;">Alias <br>
+
+
+				</th>
+				<th nowrap="" style="text-align: center;">Category <a
+					href="javascript:void(0)" onclick="list.sort('category', 'desc')"><img
+						src="/static/admin/images/arrow_bottom.png"></a> <a
+					href="javascript:void(0)" onclick="list.sort('category', 'asc')"><img
+						src="/static/admin/images/arrow_top.png"></a> <br> <select
+					id="b.id" rel="listFilter" class="select1 insidetd"><option
+							value="all">All</option>
+						<option value="1">Đời sống sinh viên</option>
+						<option value="2">Thực tập - Việc làm</option>
+						<option value="3">Đào tạo kỹ năng</option>
+						<option value="4">Phòng trọ</option>
+						<option value="5">Hồ sơ ứng tuyển</option>
+						<option value="7">Kỹ năng mềm là gì?</option>
+						<option value="8">Giải trí tuổi trẻ</option>
+						<option value="9">Hội sinh viên</option>
+						<option value="11">Các khóa học kỹ năng mềm</option>
+						<option value="12">Du học - Ngoại ngữ</option>
+						<option value="13">Học ngoại ngữ</option>
+						<option value="30">Diễn đàn - Thảo luận</option>
+						<option value="33">Chuyên ngành</option>
+						<option value="34">Hệ thống giáo dục</option>
+						<option value="35">Văn bằng – Chứng chỉ</option>
+						<option value="36">Giáo dục đại học</option>
+						<option value="37">Giáo dục sau đại học</option>
+						<option value="39">Tư vấn du học</option>
+						<option value="40">Kỹ năng tìm việc &amp; thực tập</option>
+						<option value="41">Phỏng vấn xin việc</option>
+						<option value="45">Việc làm thêm</option>
+						<option value="46">Website tuyển dụng 'First-Viec-Lam'</option>
+						<option value="47">Thông tin việc làm 'Blog First-Viec-Lam'</option>
+						<option value="48">Các nhóm kỹ năng</option>
+						<option value="56">Kỹ năng giao tiếp</option>
+						<option value="57">Kỹ năng học tập</option>
+						<option value="58">Kỹ năng xin việc</option>
+						<option value="59">Kỹ năng giải toả Stress</option>
+						<option value="60">Kỹ năng sống</option>
+						<option value="61">Kỹ năng thuyết trình</option>
+						<option value="62">Thư viện sách hay</option>
+						<option value="63">Tài liệu tham khảo</option>
+						<option value="64">Sinh viên rao vặt</option>
+				</select>
+				</th>
+				<th nowrap="" style="text-align: center;">Image <br>
+
+
+				</th>
+				<th nowrap="" style="text-align: center;">Description <br>
+
+
+				</th>
+				<th nowrap="" style="text-align: center;">Post date <a
+					href="javascript:void(0)"
+					onclick="list.sort('a.created_time', 'desc')"><img
+						src="/static/admin/images/arrow_bottom.png"></a> <a
+					href="javascript:void(0)"
+					onclick="list.sort('a.created_time', 'asc')"><img
+						src="/static/admin/images/arrow_top.png"></a> <br> <input
+					disabled="true" class="textbox_calendar hasDatepicker" type="text"
+					id="a.created_time"><img class="ui-datepicker-trigger"
+					src="/static/admin/images/edit.png" alt="..." title="...">
+				</th>
+				<th nowrap="" style="text-align: center;">Active <br> <select
+					rel="listFilter" class="select1 insidetd" id="a.active"><option
+							value="all">All</option>
+						<option value="0">Deactive</option>
+						<option value="1">Active</option>
+				</select>
+				</th>
+				<th nowrap="" style="text-align: center;">Sort<br>
+				<input type="button" value="Update sort" id="bUpdateSort"> <br>
+
+
+				</th>
+
+
+			</tr>
+		</thead>
+
+		<tbody id="container">
+		   <?php foreach ($this->articles as $key=>$val):?>
+				<tr <?php echo $val->id;?>>
+				<td style="text-align: center;"><a onclick="list.edit('822')"
+					href="/admin/index/update/<?php echo $val->id;?>"><img
+						src="/static/admin/images/edit.png" alt="" title=""></a> <a
+					onclick="list.deleteSingleRow('822')" href="/admin/index/delete/<?php echo $val->id;?>"><img
+						src="/static/admin/images/recycle_bin.png" alt="" title=""></a> <input
+					type="checkbox" class="chkRow" value="<?php echo $val->id;?>"></td>
+				<td align="center"><?php echo $val->id;?></td>
+				<td align="center"><?php echo $val->name;?></td>
+				<td align="center"><?php echo $val->alias;?></td>
+				<td align="center"><?php echo $val->cat_id;?></td>
+				<td align="center"><a href="/admin/detail/822.html">
+					<img src="<?php echo $val->image;?>" style="" width="100"></a><br>
+				</td>
+				<td align="center"><?php echo $val->intro_text;?></td>
+				<td align="center"><?php echo $val->created_time;?></td>
+				<td align="center"><?php echo $val->active;?></td>
+				<td align="center"><?php echo $val->sort;?></td>
+
+			</tr>
+		   <?php endforeach;?>
+			
+		</tbody>
+
+	</table>
+
+	<table class="tbl"
+		style="border-top: none; border-botom: 1px solid #BBBBBB">
+		<tbody>
+			<tr>
+				<td>
+					<div class="l">
+						Show <select class="select1" id="cboLimit"><option>5</option>
+							<option>10</option>
+							<option>15</option>
+							<option>20</option>
+							<option>25</option>
+							<option>30</option>
+						</select> items
+					</div>
+										
+			<?php echo ( count($this->articles) > 0 ) ? $this->paginationControl($this->articles, 'Sliding', 'paginator.phtml',array('route' => 'admin','controller' => 'index','action' => 'index')) : "";?>
+                </td>
+
+			</tr>
+		</tbody>
+	</table>
+
+	<div id="popup-dialog" style="display: none;"></div>
+	<script type="text/javascript">
+	list.bindEvent();
+	list.url ="/admin/index";
+</script>
+</div>

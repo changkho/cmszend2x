@@ -1,0 +1,367 @@
+
+#manual-container p {
+    margin: 0 0 1em;
+    padding: 0;
+}
+div.important, div.warning, div.tip {
+    background-color: #E0E0E0;
+    border: 1px solid blue;
+    margin-left: 0.3in;
+    margin-right: 0.5in;
+    padding: 0.1in;
+}
+div.important img, div.warning img, div.tip img {
+    border: 1px solid blue;
+    margin-right: 0.1in;
+}
+div.warning {
+    background: none repeat scroll 0 0 #FFCCCC;
+    border: 1px solid #AA7777;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    margin: 1.5em 0;
+    padding: 1.25em 1.25em 0.75em;
+}
+div.warning b.warning {
+    color: #CC0000;
+    font-weight: bold;
+}
+div.warning h1, div.warning h2, div.warning h3, div.warning h4 {
+    border-color: #CC0000;
+    color: #CC0000;
+    font-weight: bold;
+}
+div.example {
+    background: none repeat scroll 0 0 #F2F9FF;
+    border: 1px solid #999999;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    margin: 1.5em 0;
+    padding: 1.25em 1.25em 0.75em;
+}
+div.example p.title {
+    font-size: 1.083em;
+    font-weight: bold;
+    padding-top: 10px;
+}
+div.programlisting {
+    background: none repeat scroll 0 0 #E2F1F8;
+    border-left: 1px solid #C2C9D1;
+    font-family: Consolas,Lucida Console,monospace;
+    font-size: 12px;
+    margin-bottom: 1em;
+    overflow: auto;
+    padding: 1em 1.5em 0.5em;
+}
+pre.programlisting {
+    background-color: #E0E0E0;
+    border: 1px solid #444444;
+    margin: 0.2in;
+    padding: 0.1in;
+}
+pre.screen {
+    background-color: #DDDDDD;
+    border: 1px solid #777777;
+    margin: 0.2in;
+    padding: 0.1in;
+}
+div.variablelist dl dt span.term {
+    font-weight: bold;
+}
+div.navheader {
+    border-bottom: 1px solid #AAAAAA;
+    border-color: #AAAAAA;
+    padding-bottom: 0.1in;
+}
+div.navfooter {
+    border-color: #AAAAAA;
+    border-top: 1px solid #AAAAAA;
+    margin-top: 0.1in;
+    padding-top: 0.1in;
+}
+div.figure-float {
+    float: right;
+    margin-bottom: 2em;
+    margin-left: 2em;
+}
+div.revinfo {
+    font-size: 0.7em;
+    font-style: italic;
+    text-align: center;
+}
+div.rtl-language {
+    direction: rtl;
+}
+div.itemizedlist ul {
+    list-style: disc outside none;
+    padding: 0 0 1em 20px;
+}
+dl dt span.sect1 {
+    margin-left: 2em;
+}
+dl dt span.sect2 {
+    margin-left: 4em;
+}
+dl dt span.sect3 {
+    margin-left: 6em;
+}
+dl dt span.sect4 {
+    margin-left: 8em;
+}
+h3 {
+    padding-top: 15px;
+}
+pre.programlisting {
+    background-color: #EDF7FF;
+    border: 1px solid #D3E0EB;
+    direction: ltr;
+    font-family: "Courier New",Courier,monospace;
+    font-size: 1.2em;
+    margin: 10px 0 15px;
+    overflow: auto;
+    padding: 13px 23px;
+}
+code.code {
+    font-size: 1.1em;
+}
+p.note {
+    background: url("../images/note.gif") no-repeat scroll 17px 12px #FFFDBD;
+    border: 1px solid #E4E7A7;
+    color: #232D30;
+    margin: 1.75em 0;
+    padding: 15px 23px 25px 64px;
+}
+div.note table th {
+    font-size: 1.083em;
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+div.note table td img {
+    margin-right: 1em;
+}
+#manual {
+    color: #4F4E4E;
+    font-family: 'MuseoSans500Regular';
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px 0;
+}
+#manual-container div.info h1 {
+    border-bottom: 1px solid #0398CA;
+    color: #0398CA;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+#manual-container {
+    text-align: left;
+}
+#manual-container div.table th {
+    font-size: larger;
+    font-weight: bold;
+    padding-left: 4px;
+}
+#manual-container div.table td {
+    padding-left: 4px;
+}
+#manual-container ol {
+    list-style: decimal outside none;
+    padding: 0 0 1em 25px;
+}
+#manual-container ul, .chunklist.chunklist_title {
+    font-family: 'MuseoSans500Regular';
+    list-style: disc outside none;
+    padding: 0 0 1em 20px;
+}
+a {
+    font-family: 'MuseoSans500Regular';
+}
+#manual-container ul span {
+    font-weight: bold;
+}
+#manual-container div.info h1 {
+    border-bottom: 1px solid #0398CA;
+    color: #0398CA;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+#manual-container hr {
+    background-color: #0398CA;
+    border: medium none;
+    color: #0398CA;
+    height: 1px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    width: 100%;
+}
+.overview ul li a, .overview ul li {
+    background: none repeat scroll 0 0 transparent !important;
+    color: #686868;
+    display: block;
+    font-size: 16px;
+    line-height: 18px;
+}
+.overview ul li ul.manual.toc {
+    display: block;
+}
+.overview ul li ul.manual.toc li a {
+    padding-left: 0;
+}
+.overview h2 {
+    color: #24B9FF;
+    font-family: 'Museo300Regular';
+    font-size: 18px;
+    margin-left: 15px;
+    margin-top: 1em;
+    padding-bottom: 5px;
+}
+ul.manual.toc li.header.up, ul.manual.toc li.header.home {
+    padding-left: 1em;
+}
+ul.manual.toc li.active {
+    padding-left: 1.5em;
+}
+ul.manual.toc li {
+    padding-left: 1em;
+}
+.manual-version-sctr {
+    display: none;
+    visibility: hidden;
+}
+#manual-container .section h1.title {
+    border-bottom: 2px solid #D1DDE0;
+    font-size: 1.75em;
+}
+#manual-container .section h1.title a.title-link-anchor {
+    color: #DDDDDD;
+    font-size: 0.8em;
+}
+#manual-container .section h1.title a.title-link-anchor:hover {
+    color: #888888;
+}
+#manual-container .section .section h1.title {
+    border-bottom-width: 1px;
+    font-size: 1.4em;
+    margin-top: 1.25em;
+}
+#manual-container .section .section .section h1.title {
+    border: medium none;
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+#manual-container hr {
+    background-color: #D1DDE0;
+}
+#manual-container blockquote {
+    background: none repeat scroll 0 0 #FFFFDD;
+    border: 1px solid #AAAA77;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    margin: 1.5em 0;
+    padding: 1.25em 1.25em 0.75em;
+}
+#manual-container .command, #manual-container .classname, #manual-container .methodname, #manual-container .varname, #manual-container .property {
+    font-family: consolas,lucida console,monospace,fixed;
+    font-size: 14px;
+    font-weight: bold;
+}
+#manual-container .classname, #manual-container .methodname, #manual-container .varname, #manual-container .property {
+    color: #000000;
+    font-style: normal;
+}
+#manual-container div.programlisting {
+    background: none repeat scroll 0 0 #FAFBFC;
+    border: 1px solid #AAAAAA;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    margin: 1.5em 0;
+    padding: 1em 1.25em 0.75em;
+}
+#manual-container div.programlisting ol[style], #manual-container div.programlisting li[style], #manual-container div.programlisting div[style] {
+    color: #111111 !important;
+    font-family: consolas,monospace,fixed !important;
+}
+#manual-container div.programlisting li[style] {
+    color: #AAAAAA !important;
+}
+.comments h3 {
+    background-color: #0398CA;
+    border: 1px solid #666699;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+    padding: 0.5em 0.75em;
+}
+.comment-form h4 {
+    background-color: #0398CA;
+    border-top: 1px solid #D3E0EB;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-top: 2em;
+    padding-bottom: 4px;
+    padding-left: 0.5em;
+}
+.comment-form h4 span.expand {
+    float: right;
+    margin-right: 0.5em;
+}
+.comments .comment {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #AAAAAA;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1em;
+    padding: 0.75em;
+}
+.comments .comment:nth-child(2n+1) {
+    background: none repeat scroll 0 0 #F2F5FF;
+}
+.comment .admin form {
+    display: inline;
+}
+.comment .metadata {
+    border-bottom: 1px solid #AAAAAA;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+}
+.comment .admin {
+    border-top: 1px solid #D3E0EB;
+}
+.comment .admin .status {
+    border-right: 1px solid #D3E0EB;
+    margin-right: 1em;
+}
+.comment .admin form {
+    margin-left: 1em;
+}
+dl span.term, dl dt {
+    font-weight: bold;
+}
+dl dd {
+    margin-left: 2em;
+}
+div.comment-form h4 {
+    border: 1px solid #666699;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    margin-bottom: 0.5em;
+    padding: 0.5em 0.75em;
+}
+h1.edition {
+    font-size: 22px !important;
+}
+.info strong {
+    font-weight: bold;
+}
+.info h1 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+}
+.programlisting li {
+    font-size: 14px;
+}
+.programlisting li div {
+    font-size: 14px;
+}

@@ -1,0 +1,60 @@
+<?php  if ($this->pageCount>1): ?>
+		<span style="float: left;padding: 5px;">in page:</span>
+         <ul class="ulP">
+        
+	    <?php if (isset($this->previous)): ?>
+			<li><a onclick="requestPage('<?php echo $this->url() ?> ','<?php echo $this->first?>')" href="<?php echo $this->url($this->route, array('controllers'=>$this->controller,'action'=>$this->action,'param' => $this->first)); ?>">First</a></li>
+		<?php else: ?>
+			<li><a>First</a></li>
+		<?php endif; ?>
+		
+        <!-- Begin previous page link -->
+        <?php if (isset($this->previous)): ?>
+            <li class="paging_previous">
+            	<a title="Previous" onclick="requestPage('<?php echo $this->url() ?> ','<?php echo $this->previous?>')"  href="<?php echo $this->url($this->route, array('controllers'=>$this->controller,'action'=>$this->action,'param' => $this->previous)); ?>">
+                	Pre
+                </a>
+            </li>
+        <?php else: ?>
+            <li class="paging_previous"><a>Pre</a></li>
+        <?php endif; ?>    
+	    <!-- End previous page link -->
+
+       <!-- Begin numbered page links -->
+        <?php foreach ($this->pagesInRange as $page): ?>
+            <?php if ($page != $this->current): ?>
+            	<li class="paging_link">
+	                <a onclick="requestPage('<?php echo $this->url() ?> ','<?php echo $page?>')" href="<?php echo $this->url($this->route, array('controllers'=>$this->controller,'action'=>$this->action,'param' => $page)); ?>">
+						<?php echo $page; ?>
+                    </a>
+                </li>    
+            <?php else: ?>
+            	<li class="activeP"><a><?php echo $page; ?></a></li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+       <!-- End numbered page links -->
+        
+
+	    <!-- Begin next page link -->
+      	<?php if (isset($this->next)): ?>
+			<li class="paging_next">
+            	<a title="Next" onclick="requestPage('<?php echo $this->url() ?> ','<?php echo $this->next ?>')" href="<?php echo $this->url($this->route, array('controllers'=>$this->controller,'action'=>$this->action,'param' => $this->next)); ?>">
+                	Next
+                </a>
+            </li>
+        <?php else: ?>
+            <li class="paging_next"><a>Next</a></li>
+        <?php endif; ?>    
+	    <!-- End next page link -->
+		<?php if (isset($this->next)): ?>
+		  <li><a onclick="requestPage('<?php echo $this->url() ?> ','<?php echo $this->last ?>')" href="<?php echo $this->url($this->route, array('controllers'=>$this->controller,'action'=>$this->action,'param' => $this->last)); ?>">Last</a></li>
+		<?php else: ?>
+		 <li><a>Last</a></li>
+		<?php endif; ?>
+		
+            
+        </ul>
+<?php endif; ?>
+   
+
+
