@@ -1,4 +1,5 @@
 <?php 
+// comment
 namespace Admin;
 
 use Admin\Model\Category;
